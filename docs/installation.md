@@ -104,6 +104,8 @@ Add to `ios/_YOUR_PROJECT_NAME_/AppDelegate.m:
 ...
 ```
 
+Make sure the `provideAPIKey` call is the **first** statement in the method, otherwise you might get a blank/grey map.
+
 ## Notes on running on a real ios device
 
 The steps are as described in https://facebook.github.io/react-native/docs/running-on-device.html , however instead of opening the .xcodeproj file you should open .xcworkspace file.
@@ -203,6 +205,8 @@ Source: https://developers.google.com/maps/documentation/android-api/signup
 If you have a blank map issue, ([#118](https://github.com/airbnb/react-native-maps/issues/118), [#176](https://github.com/airbnb/react-native-maps/issues/176), [#684](https://github.com/airbnb/react-native-maps/issues/684)), try the following lines :
 
 ### On iOS:
+
+First, verify that `provideAPIKey` is the first statement of `didFinishLaunchingWithOptions`, and verify your GoogleMaps keys and their restrictions. Most often a blank/grey map with markers/polylines/google logo on top of it is related to an API key issue.
 
 If you have ran 'react-native link` by mistake:
 
